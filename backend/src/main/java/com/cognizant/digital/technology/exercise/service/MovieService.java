@@ -24,4 +24,8 @@ public class MovieService {
     public Movie getMovie(long movieId) {
         return movieRepository.findById(movieId).orElse(null);
     }
+
+    public void save(long movieId, Movie movie) {
+
+    }
 }

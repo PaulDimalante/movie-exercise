@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpStatusCodeException;
 
 import java.util.List;
 
@@ -28,11 +27,13 @@ public class MovieController {
 
     @GetMapping("/{movieId}")
     public ResponseEntity<Movie> get(@PathVariable long movieId) {
-        return null;
+        Movie movie = this.movieService.getMovie(movieId);
+        return new ResponseEntity<Movie>(movie, HttpStatus.NOT_FOUND);
     }
 
     @PutMapping("/{movieId}")
     public ResponseEntity<Movie> put(@PathVariable long movieId, @RequestBody Movie movie) {
-        return null;
+        this.movieService.save(movieId, movie);
+        return new ResponseEntity<Movie>(movie, HttpStatus.BAD_REQUEST);
     }
 }

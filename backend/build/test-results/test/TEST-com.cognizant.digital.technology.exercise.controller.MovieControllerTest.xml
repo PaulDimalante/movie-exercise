@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-09-13T18:28:17" hostname="DESKTOP-IFKHLR1" time="0.523">
+  <properties/>
+  <testcase name="put_NoRequestBodyReturns400BadRequest" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.507"/>
+  <testcase name="getReturnsNotFoundWhenMovieDoesNotExist" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.004"/>
+  <testcase name="getReturnsMovie" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.001"/>
+  <testcase name="put_callsMovieServiceSave" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.007"/>
+  <testcase name="getReturnsAllMoviesFromServiceGivenNoId" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.0"/>
+  <testcase name="put_NoRatingReturns400BadRequest" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.0"/>
+  <testcase name="getReturnsAllMoviesGivenNoId" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.001"/>
+  <testcase name="getReturnsMovieByProvidedId" classname="com.cognizant.digital.technology.exercise.controller.MovieControllerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
