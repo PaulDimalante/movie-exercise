@@ -73,6 +73,7 @@ describe('MovieDetailsComponent', () => {
 
   afterEach(() => {
     getOneSpy.calls.reset();
+    saveSpy.calls.reset();
   })
 
   it('should create', () => {
@@ -153,7 +154,6 @@ describe('MovieDetailsComponent', () => {
     fixture.detectChanges();
     expect(component.movie.rating).toEqual("GREAT");
   }));
-
   it('should pass updated movie to service when rating is updated', () => {
     component.updateRating("GREAT");
     expect(saveSpy.calls.count()).toEqual(1);

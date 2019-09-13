@@ -33,7 +33,13 @@ public class MovieController {
 
     @PutMapping("/{movieId}")
     public ResponseEntity<Movie> put(@PathVariable long movieId, @RequestBody Movie movie) {
-        this.movieService.save(movieId, movie);
-        return new ResponseEntity<Movie>(movie, HttpStatus.BAD_REQUEST);
+        Movie movieSaved = this.movieService.save(movieId, movie);
+        HttpStatus status;
+        if(movieSaved == null) {
+            status = HttpStatus.BAD_REQUEST;
+        } else {
+            status = HttpStatus.OK;
+        }
+        return new ResponseEntity<Movie>(movie, status);
     }
 }
