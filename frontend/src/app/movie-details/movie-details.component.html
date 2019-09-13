@@ -1,0 +1,25 @@
+<div *ngIf="movie && !errorMessage" class="row pt-3">
+  <div class="col-4 offset-1"><img src="assets/{{movie.id}}.jpg"/></div>
+  <div class="col-6">
+    <div id="movie-name" class="row">
+      <h6 class="col-4 label">Name:</h6>
+      <p class="col value">{{movie.name}}</p>
+    </div>
+    
+    <div id="movie-description" class="row">
+      <h6 class="col-4 label">Description:</h6>
+      <p class="col value">{{movie.description}}</p>
+    </div>
+
+    <div id="movie-rating" class="row">
+      <h6 class="col-4 label">Rating:</h6>
+      <div class="col">
+        <fa-icon icon="star" class="mr-1" [ngClass]="{'highlighted': shouldHighlight('BAD')}" (click)="updateRating('BAD')"></fa-icon>
+        <fa-icon icon="star" class="mr-1" [ngClass]="{'highlighted': shouldHighlight('OKAY')}" (click)="updateRating('OKAY')"></fa-icon>
+        <fa-icon icon="star" class="mr-1" [ngClass]="{'highlighted': shouldHighlight('GOOD')}" (click)="updateRating('GOOD')"></fa-icon>
+        <fa-icon icon="star" class="mr-1" [ngClass]="{'highlighted': shouldHighlight('GREAT')}" (click)="updateRating('GREAT')"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="error-message" *ngIf="errorMessage" class="row align-items-center justify-content-center">{{errorMessage}}</div>
