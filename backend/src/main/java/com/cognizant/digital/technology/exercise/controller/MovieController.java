@@ -28,7 +28,13 @@ public class MovieController {
     @GetMapping("/{movieId}")
     public ResponseEntity<Movie> get(@PathVariable long movieId) {
         Movie movie = this.movieService.getMovie(movieId);
-        return new ResponseEntity<Movie>(movie, HttpStatus.NOT_FOUND);
+        HttpStatus status;
+        if(movie == null) {
+            status = HttpStatus.NOT_FOUND;
+        } else {
+            status = HttpStatus.OK;
+        }
+        return new ResponseEntity<Movie>(movie, status);
     }
 
     @PutMapping("/{movieId}")
