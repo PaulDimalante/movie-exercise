@@ -12,7 +12,6 @@ export class MovieService {
   constructor(private httpClient: HttpClient) { }
 
   getOne(id: number): Observable<Movie> {
-    debugger;
     return this.httpClient.get<Movie>(environment.moviesURL + '/' + id);
   }
 
